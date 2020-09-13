@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Matargasthi-An App to enjoy toghether</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/platform_util.css">
+	<link rel="stylesheet" type="text/css" href="css/platform.css">
+<!--===============================================================================================-->
+    
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<!--===============================================================================================-->
+</head>
+<body>
+    
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/[Original size] Black Event Coordinators Logo.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" enctype="multipart/form-data" action="" id="myform">
+					<center><div class="main-icon"><img src="images/[Original size] Black Event Coordinators Logo.png" height="105px" width="105px"></div></center>
+					<span class="login100-form-title">
+
+					</span>
+                    <style>
+#preview{
+   width:500px;
+   height: 500px;
+   margin:0px auto;
+}
+</style>
+<video id="preview"></video>
+
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" rel="nofollow"></script>
+<script type="text/javascript">
+    var scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5, mirror: false });
+    scanner.addListener('scan',function(content){
+        alert(content);
+        //window.location.href=content;
+    });
+    Instascan.Camera.getCameras().then(function (cameras){
+        if(cameras.length>0){
+            scanner.start(cameras[0]);
+            $('[name="options"]').on('change',function(){
+                if($(this).val()==1){
+                    if(cameras[0]!=""){
+                        scanner.start(cameras[0]);
+                    }else{
+                        alert('No Front camera found!');
+                    }
+                }else if($(this).val()==2){
+                    if(cameras[1]!=""){
+                        scanner.start(cameras[1]);
+                    }else{
+                        alert('No Back camera found!');
+                    }
+                }
+            });
+        }else{
+            console.error('No cameras found.');
+            alert('No cameras found.');
+        }
+    }).catch(function(e){
+        console.error(e);
+        alert(e);
+    });
+</script>
+<div class="btn-group btn-group-toggle mb-5" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="options" value="1" autocomplete="off" checked> Front Camera
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" value="2" autocomplete="off"> Back Camera
+  </label>
+</div>
+				</form>
+                        
+            
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+    
+
+</body>
+</html>
