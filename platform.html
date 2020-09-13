@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Matargasthi-An App to enjoy toghether</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/platform_util.css">
+	<link rel="stylesheet" type="text/css" href="css/platform.css">
+<!--===============================================================================================-->
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<!--===============================================================================================-->
+</head>
+<body>
+    <script type="text/javascript" src="grid.js"></script>
+        <script type="text/javascript" src="version.js"></script>
+        <script type="text/javascript" src="detector.js"></script>
+        <script type="text/javascript" src="formatinf.js"></script>
+        <script type="text/javascript" src="errorlevel.js"></script>
+        <script type="text/javascript" src="bitmat.js"></script>
+        <script type="text/javascript" src="datablock.js"></script>
+        <script type="text/javascript" src="bmparser.js"></script>
+        <script type="text/javascript" src="datamask.js"></script>
+        <script type="text/javascript" src="rsdecoder.js"></script>
+        <script type="text/javascript" src="gf256poly.js"></script>
+        <script type="text/javascript" src="gf256.js"></script>
+        <script type="text/javascript" src="decoder.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="findpat.js"></script>
+        <script type="text/javascript" src="alignpat.js"></script>
+        <script type="text/javascript" src="databr.js"></script>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/[Original size] Black Event Coordinators Logo.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" enctype="multipart/form-data" action="" id="myform">
+					<center><div class="main-icon"><img src="images/[Original size] Black Event Coordinators Logo.png" height="105px" width="105px"></div></center>
+					<span class="login100-form-title">
+					<strong>Scan Qr code</strong>
+					</span>
+
+					<!--<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text"id="email" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" id="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                    </div>-->
+                    
+<!-- MAX_FILE_SIZE (maximum file size in bytes) must precede the file input field used to upload the QR code image -->
+<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						
+     <input   class="input100" type="file" onchange="encodeImageFileAsURL(this)" />
+						<span class="focus-input100"></span>
+                        </div>
+<!-- The "name" of the input field has to be "file" as it is the name of the POST parameter -->
+
+<input type="button" class="login100-form-btn-yt"  id="action" value="Upload & Scan"/>
+    
+                    
+                    
+                    
+                    <div class="container-login100-form-btn">
+						<button id="btn-Drive" class="login100-form-btn-dr">
+                            <img  src="images/Google-Drive-icon.png" height="25px" width="25px">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="text-align: center;"><strong> Google Drive</strong></span>
+						</button>
+					</div>
+                    <br><br>
+					
+
+					<!--<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="forgot-password.html">
+							Username / Password?
+						</a>
+						<br> <br> <br>
+						<a class="txt2" href="signup.html">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>-->
+
+					<!--<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>-->
+					
+				</form>
+                        <script>
+            // A qrcode with "ourcodeworld.com" as value in format base64 encoded
+           // var imageURI = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQMAAABncE31AAAABlBMVEX///8AAABVwtN+AAABA0lEQVRoge3ZUQ6CMAzG8SYcwCNx9R2JA5jU0a6ARKIP60z0/z0wZD+fmm1siBBCCPmfaMu93t/sEk8KKlv5jwrq3VT7jO4dqEy1lsT65mVS92vBUAOVKupbKmYm1DhljffpB/MXqp/aVmQfIuXNuo3qp46p4KIHlaFiTKzXRdrS4GszKlnJHCPBhkgF2z9RyWqvkNWlUdWrOqL6qZiP2kuoVWivGipT+cAosfsNOqHy1cm34txOuwBUhtKW2Hf52Zu8XLdRnVWxZtt3+duQ3gU1QD2d+kSFBDVUFX8ytZcj1Eh1OHMWQQ1Q1kSF2hb4ev5CdVTHFVl1/86FSleEEEJ+PQ/ANYzwx13NHQAAAABJRU5ErkJggg==";
+
+            /**
+             * The function decodeImageFromBase64 expects as first parameter a base64 string from a QRCode.
+             * As second parameter the callback that expects the data from the QRCode as first parameter.
+             */
+            function decodeImageFromBase64(data, callback){
+                // set callback
+                qrcode.callback = callback;
+                // Start decoding
+                qrcode.decode(data)
+            }
+            function encodeImageFileAsURL(element) {
+  var file = element.files[0];
+  var reader = new FileReader();
+  reader.onloadend = function() {
+    console.log('RESULT', reader.result);
+      imageURI = reader.result;
+  }
+  reader.readAsDataURL(file);
+}
+
+            // On button click, decode the qrCode from the base64 format.
+            document.getElementById("action").addEventListener('click',function(){
+                if(imageURI){
+                    decodeImageFromBase64(imageURI,function(decodedInformation){
+                    sessionStorage.setItem("link",decodedInformation);
+                        open();
+                    function open()
+                        {
+                            if(sessionStorage.getItem("link"))
+                                {
+                                    window.open('invite.html','_self');
+                                }
+                            else{
+                                open();
+                            }
+                        }
+                
+    
+    
+});}
+                
+
+
+            },false);
+        </script>
+            
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+    
+
+</body>
+</html>
