@@ -25,7 +25,7 @@
 </head>
     <script>
     
-        window.onload=function ()
+        window.onload=function()
         {
             var tyui=document.getElementById("preloader");
             tyui.style.display="none";
@@ -49,9 +49,9 @@
 
 				<form class="login100-form validate-form">
 					<center><div class="main-icon"><img src="ho.png" height="105px" width="105px"></div></center>
-					<span class="login100-form-title">
-					<strong>QR code</strong>
-					</span>
+				
+					
+					
 
 					<!--<div class="wrap-input100 validate-input" data-validate = "This field is Required">
 						<input class="input100" type="text" name="room_name" placeholder="Room Name">
@@ -68,6 +68,10 @@
                         <button class="btn login100-form-btn" data-clipboard-action="copy" data-clipboard-target="#linp" type="button">
     copy to clipboard
 </button>
+					</div>
+                    <div class="wrap-input100 validate-input" style="display:none" id="khip" data-validate = "This field is required">
+                        
+                        <button class="btn login100-form-btn"  id="action" type="button">Open Link</button>
 					</div>
 				
 					<div class="container-login100-form-btn">
@@ -116,8 +120,18 @@
         
    // }
 
-    
+   document.getElementById("action").addEventListener('click',function(){
+       var msgi1=sessionStorage.getItem("link");
+                                           window.open(`${msgi1}`,'_self');
+
+       
+   }); 
     var msgi=sessionStorage.getItem("link");
+    var nj=msgi.startsWith("https://",0);
+    var hj=msgi.startsWith("www",0);
+    if(nj==true || hj==true){
+        khip.style.display="block";
+    }
     linp.textContent=msgi;
  var clipboard = new ClipboardJS('.btn');
 
